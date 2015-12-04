@@ -10,9 +10,9 @@ import java.net.URLConnection;
 import java.net.URLEncoder;
 
 public class FBConnection {
-    public static final String FB_APP_ID = "234231262685378";
-    public static final String FB_APP_SECRET = "y2a73dede3n49uid13502f5ab8cdt390";
-    public static final String REDIRECT_URI = "http://localhost:8080/Facebook_Login/fbhome";
+    public static final String FB_APP_ID = System.getenv("FB_APP_ID");
+    public static final String FB_APP_SECRET = System.getenv("FB_APP_SECRET");
+    public static final String REDIRECT_URI = "Facebook_Login/fbhome";
 
     static String accessToken = "";
 
