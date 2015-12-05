@@ -2,25 +2,24 @@
 <%@ page import="servlet.FBConnection" %>
 <%@ page import="servlet.FBGraph" %>
 <%@ page import="java.util.Map" %>
-<!DOCTYPE html>
-<html lang="en">
-
-<head>
-    <%
-        String code="";
-        FBConnection fbConnection = new FBConnection();
-        code = request.getParameter("code");
-        String url = fbConnection.getFBAuthUrl();
-        if (code == null || code.equals("")) {
-            response.sendRedirect(url);
-        } else{
+<%
+    String code="";
+    FBConnection fbConnection = new FBConnection();
+    code = request.getParameter("code");
+    String url = fbConnection.getFBAuthUrl();
+    if (code == null || code.equals("")) {
+        response.sendRedirect(url);
+    } else{
         String accessToken = fbConnection.getAccessToken(code);
         FBGraph fbGraph = new FBGraph(accessToken);
         String graph = fbGraph.getFBGraph();
         Map<String, String> fbProfileData = fbGraph.getGraphData(graph);
+%>
+<!DOCTYPE html>
+<html lang="en">
 
-        }
-    %>
+<head>
+
 
     <meta charset="utf-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
@@ -98,3 +97,6 @@
 </body>
 
 </html>
+<%
+    }
+%>
