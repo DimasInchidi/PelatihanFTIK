@@ -51,52 +51,97 @@
 </head>
 
 <body>
-    <div id="wrapper">
-        <div id="page-wrapper">
+<div id="wrapper">
+    <div id="page-wrapper">
 
-            <div class="row">
-                <div class="col-lg-12">
-                    <h1 class="page-header">Pendaftaran Pelatihan Session 1</h1>
-                </div>
-                <!-- /.col-lg-12 -->
+        <div class="row">
+            <div class="col-lg-12">
+                <h1 class="page-header">Pendaftaran Pelatihan Session 1</h1>
             </div>
-
-            <div class="row">
-                <div class="col-lg-12">
-                    <div class="panel panel-default">
-                        <div class="panel-heading">
-                            Formulir Pendaftaran
-                        </div>
-                        <div class="panel-body">
-                            <div class="row">
-                                <div class="col-lg-6 -align-center">
-                                    <img class="col-lg-6" src="http://graph.facebook.com/<%=fbProfileData.get("id")%>/picture">
-                                </div>
-                                <!-- /.col-lg-6 (nested) -->
-                                <div class="col-lg-6">
-                                    <form role="form">
-
-                                        <button type="submit" class="btn btn-default">Selesai</button>
-                                        <button type="reset" class="btn btn-default">Reset</button>
-                                    </form>
-                                </div>
-                                <!-- /.col-lg-6 (nested) -->
-                            </div>
-                            <!-- /.row (nested) -->
-                        </div>
-                        <!-- /.panel-body -->
-                    </div>
-                    <!-- /.panel -->
-                </div>
-                <!-- /.col-lg-12 -->
-            </div>
-            <!-- /.row -->
-
+            <!-- /.col-lg-12 -->
         </div>
+
+        <div class="row">
+            <div class="col-lg-12">
+                <div class="panel panel-default">
+                    <div class="panel-heading">
+                        Formulir Pendaftaran
+                    </div>
+                    <div class="panel-body">
+                        <div class="row">
+                            <div class="col-lg-6 -align-center">
+                                <img class="col-lg-6" src="http://graph.facebook.com/<%=fbProfileData.get("id")%>/picture">
+                                <%--<img class="col-lg-6" src="/img/favicon.ico">--%>
+
+                            </div>
+                            <!-- /.col-lg-6 (nested) -->
+                            <div class="col-lg-6">
+                                <form role="form" action="/Daftar" method="POST">
+                                    <div class="form-group">
+                                        <label>Nama Lengkap</label>
+                                        <input class="form-control">
+                                        <p class="help-block">Nama Lengkap sesuai KTM yah jangan AckhuCayankMu2ah.</p>
+                                    </div>
+                                    <div class="form-group">
+                                        <label>NIM</label>
+                                        <input class="form-control">
+                                        <p class="help-block">Nomer Induk Mahasiswa atau Nomer Induk Pegawai</p>
+                                    </div>
+                                    <div class="form-group">
+                                        <label>IDE</label>
+                                        <select class="form-control">
+                                            <option>Intellij</option>
+                                            <option>Netbeans</option>
+                                            <option>Eclipse</option>
+                                            <option>Text Editor (such as: notepad/gedit, Sublime, etc)</option>
+                                        </select>
+                                        <p class="help-block">IDE yang kamu gunakan.</p>
+                                    </div>
+                                    <div class="form-group">
+                                        <label>Nocan</label>
+                                        <input class="form-control">
+                                        <p class="help-block">Nomer handphone yang aktif dan kalau bisa bukan perdana paketan <b>please</b></p>
+                                    </div>
+                                    <div class="form-group">
+                                        <label>Testimoni</label>
+                                        <textarea class="form-control" rows="3"></textarea>
+                                        <p class="help-block">Kepo dikit, singkat aja kenapa anda mengikuti pelatihan ini :3</p>
+                                    </div>
+
+                                    <div class="form-group">
+                                            <label>
+                                                <p class="help-block">Dengan ini setelah anda menekan tombol Selesai, anda menyatakan bahwa telah mengisi data di atas secara benar.
+                                                    Anda juga menyatakan bahwa anda mengikuti pelatihan ini. Biar tambah gimana gitu anda juga berusaha agar tidak terlambat saat pelatihan.
+                                                </p>
+                                                <div class="checkbox">
+                                                    <label>
+                                                        <input value="true" type="checkbox">Setuju
+                                                    </label>
+                                                </div>
+                                            </label>
+                                    </div>
+                                    <br>
+                                    <button type="submit" class="btn btn-default">Selesai</button>
+                                    <button type="reset" class="btn btn-default">Reset</button>
+                                </form>
+                            </div>
+                            <!-- /.col-lg-6 (nested) -->
+                        </div>
+                        <!-- /.row (nested) -->
+                    </div>
+                    <!-- /.panel-body -->
+                </div>
+                <!-- /.panel -->
+            </div>
+            <!-- /.col-lg-12 -->
+        </div>
+        <!-- /.row -->
+
     </div>
+</div>
 </body>
 
 </html>
 <%
-    }
+        }
 %>
