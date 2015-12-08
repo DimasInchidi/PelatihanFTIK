@@ -4,10 +4,10 @@
 <%@ page import="java.util.Map" %>
 <%@ page import="servlet.F_Koneksi" %>
 <%
-    String code= "", aksi="";
+    String code= "", aksi= "",url = "";
     FBConnection fbConnection = new FBConnection();
     code = request.getParameter("code");
-    String url = fbConnection.getFBAuthUrl();
+    url = fbConnection.getFBAuthUrl();
     if (code == null || code.equals("")) {
         response.sendRedirect(url);
     } else{
