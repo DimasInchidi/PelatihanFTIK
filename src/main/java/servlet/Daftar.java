@@ -52,11 +52,10 @@ public class Daftar extends HttpServlet {
         }
         F_Koneksi koneksi = new F_Koneksi();
         try {
-            int nim = Integer.parseInt(NIM);
             String query = "INSERT INTO public.datauser (userid, nama, nim, hp, ide, testi) " +
                     "VALUES ('" + ID +
                     "', '" + Nama + "', '" +
-                    nim +
+                    NIM +
                     "', '" + HP +
                     "', '" + IDE +
                     "', '" + Testi + "');";
