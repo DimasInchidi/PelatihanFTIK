@@ -11,6 +11,6 @@
     <title>Terimakasih, anda telah terdaftar</title>
 </head>
 <body>
-
+//Besok aja dah isi halamannya
 </body>
 </html>
