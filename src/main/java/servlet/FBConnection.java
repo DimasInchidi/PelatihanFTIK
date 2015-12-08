@@ -12,7 +12,7 @@ import java.net.URLEncoder;
 public class FBConnection {
     public static final String FB_APP_ID = System.getenv("FB_APP_ID");
     public static final String FB_APP_SECRET = System.getenv("FB_APP_SECRET");
-    public static final String REDIRECT_URI = "https://pelatihan-ftik.herokuapp.com";
+    public static final String REDIRECT_URI = "https://pelatihan-ftik.herokuapp.com/";
 
     static String accessToken = "";
 
@@ -61,7 +61,7 @@ public class FBConnection {
                 String inputLine;
                 b = new StringBuffer();
                 while ((inputLine = in.readLine()) != null)
-                    b.append(inputLine + "\n");
+                    b.append(inputLine).append("\n");
                 in.close();
             } catch (IOException e) {
                 e.printStackTrace();

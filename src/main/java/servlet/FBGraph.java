@@ -18,7 +18,7 @@ public class FBGraph {
     }
 
     public String getFBGraph() {
-        String graph = null;
+        String graph = "";
         try {
             String g = "https://graph.facebook.com/me?" + accessToken;
             URL u = new URL(g);
