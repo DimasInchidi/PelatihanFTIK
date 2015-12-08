@@ -158,7 +158,7 @@
 </div>
 <%
     if (fail.equals("insert")){%>
-<div style="display: none;" class="modal fade in" id="fail" tabindex="-1" role="dialog" aria-labelledby="myModalLabelinsert" aria-hidden="true">
+<div style="display: none;" class="modal fade in" id="fail" tabindex="-1" role="dialog" aria-labelledby="myModalLabelinsert" aria-hidden="true" style="display: block;">
     <div class="modal-dialog">
         <div class="modal-content">
             <div class="modal-header">
@@ -179,7 +179,7 @@
     <!-- /.modal-dialog -->
 </div>
     <%} else if(fail.equals("param")){%>
-<div style="display: none;" class="modal fade in" id="fail" tabindex="-1" role="dialog" aria-labelledby="myModalLabelparam" aria-hidden="true">
+<div style="display: none;" class="modal fade in" id="fail" tabindex="-1" role="dialog" aria-labelledby="myModalLabelparam" aria-hidden="true" style="display: block;">
     <div class="modal-dialog">
         <div class="modal-content">
             <div class="modal-header">
