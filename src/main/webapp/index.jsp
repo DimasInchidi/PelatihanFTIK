@@ -8,19 +8,16 @@
     String code= "",url = "", accessToken = "", graph = "";
     Map fbProfileData = null;
     request.getSession(false);
-    FBConnection fbConnection = new FBConnection();
     code = request.getParameter("code");
-    url = fbConnection.getFBAuthUrl();
-    if (code == null || code.trim().replaceAll(" ", "").equals("")) {
-        String diprint = "kodenya Kosong";
-        System.out.println(diprint);
+    if (code == null || code.equals("")) {
+        FBConnection fbConnection = new FBConnection();
+        url = fbConnection.getFBAuthUrl();
         response.sendRedirect(url);
     } else{
+        FBConnection fbConnection = new FBConnection();
         String diprint = "kodenya>>>"+code+"<<<<";
         System.out.println(diprint);
         accessToken = fbConnection.getAccessToken(code);
-        diprint = "accessTokenya>>>"+accessToken+"<<<<";
-        System.out.println(diprint);
         FBGraph fbGraph = new FBGraph(accessToken);
         graph = fbGraph.getFBGraph();
         fbProfileData = fbGraph.getGraphData(graph);
