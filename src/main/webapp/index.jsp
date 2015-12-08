@@ -10,7 +10,7 @@
     FBConnection fbConnection = new FBConnection();
     code = request.getParameter("code");
     url = fbConnection.getFBAuthUrl();
-    if (code == null || code.replaceAll(" ","").equals("")) {
+    if (code == null || code.trim().replaceAll(" ","").equals("")) {
         response.sendRedirect(url);
     } else{
         System.out.println("kodenya: "+code);
