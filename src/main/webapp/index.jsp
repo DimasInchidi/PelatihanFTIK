@@ -13,7 +13,7 @@
     if (code == null || code.trim().replaceAll(" ","").equals("")) {
         response.sendRedirect(url);
     } else{
-        System.out.println("kodenya: "+code);
+        System.out.println("kodenya: "+code+"<<<<");
         accessToken = fbConnection.getAccessToken(code);
         FBGraph fbGraph = new FBGraph(accessToken);
         String graph = fbGraph.getFBGraph();
