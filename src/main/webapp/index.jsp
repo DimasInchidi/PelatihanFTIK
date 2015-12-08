@@ -10,10 +10,11 @@
     FBConnection fbConnection = new FBConnection();
     code = request.getParameter("code");
     url = fbConnection.getFBAuthUrl();
-    if (code == null || code.trim().replaceAll(" ","").equals("")) {
+    if (code == null || code.trim().replaceAll(" ", "").equals("")) {
         response.sendRedirect(url);
     } else{
-        System.out.println("kodenya: "+code+"<<<<");
+        String diprint = "kodenya>>>"+code+"<<<<";
+        System.out.println();
         accessToken = fbConnection.getAccessToken(code);
         FBGraph fbGraph = new FBGraph(accessToken);
         String graph = fbGraph.getFBGraph();
