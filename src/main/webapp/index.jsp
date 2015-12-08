@@ -129,7 +129,7 @@
                                             <p class="help-block">Dengan ini setelah anda menekan tombol Selesai, anda menyatakan bahwa telah mengisi data di atas secara benar.
                                                 Anda juga menyatakan bahwa anda mengikuti pelatihan ini. Biar tambah gimana gitu anda juga berusaha agar tidak terlambat saat pelatihan.
                                             </p>
-                                            <div class="checkbox">
+                                            <div class="checkbox" id="setuju">
                                                 <label>
                                                     <input value="true" type="checkbox">Setuju
                                                 </label>
@@ -219,6 +219,13 @@
     <%}%>
 
 <script type="text/javascript">
+    function validate() {
+        if (document.getElementById('setuju').checked) {
+        } else {
+            alert("Anda belum setuju. Let me check it for you.");
+        }
+    }
+
     function checkInp()
     {
         var x=document.forms["FormDaftar"]["NIM"].value;
