@@ -151,7 +151,7 @@ public class F_Koneksi {
             stmt = con.createStatement();
             stmt.executeQuery(sql);
             return true;
-        } catch (SQLException ex) {
+        } catch (Exception ex) {
             ex.printStackTrace();
             return false;
         } finally {
