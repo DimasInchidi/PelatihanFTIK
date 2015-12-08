@@ -4,7 +4,7 @@
 <%@ page import="java.util.Map" %>
 <%@ page import="servlet.F_Koneksi" %>
 <%
-    String code= "", aksi= "",url = "", accessToken = "";
+    String code= "",url = "", accessToken = "";
     request.getSession(false);
     FBConnection fbConnection = new FBConnection();
     code = request.getParameter("code");
