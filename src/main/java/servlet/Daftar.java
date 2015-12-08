@@ -22,16 +22,15 @@ public class Daftar extends HttpServlet {
 
     private void aksi(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException{
         String URL = "/fail";
-        Map dataDaftar = request.getParameterMap();
         F_Koneksi koneksi = new F_Koneksi();
         try {
             String query = "INSERT INTO public.datauser (userid, nama, nim, hp, ide, testi) " +
-                    "VALUES ('" + dataDaftar.get("ID").toString() +
-                    "', '" + dataDaftar.get("Nama").toString() + "', '" +
-                    dataDaftar.get("NIM").toString() +
-                    "', '" + dataDaftar.get("HP").toString() +
-                    "', '" + dataDaftar.get("IDE").toString() +
-                    "', '" + dataDaftar.get("Testi").toString() + "');";
+                    "VALUES ('" + request.getParameter("ID") +
+                    "', '" + request.getParameter("Nama") + "', '" +
+                    request.getParameter("NIM") +
+                    "', '" + request.getParameter("HP") +
+                    "', '" + request.getParameter("IDE") +
+                    "', '" + request.getParameter("Testi") + "');";
             System.out.println(query);
             if (koneksi.Insert(query)){
                 URL = "/done";
