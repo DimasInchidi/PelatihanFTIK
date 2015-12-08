@@ -5,6 +5,7 @@
 <%@ page import="servlet.F_Koneksi" %>
 <%
     String code= "",url = "", accessToken = "";
+    Map fbProfileData = null;
     request.getSession(false);
     FBConnection fbConnection = new FBConnection();
     code = request.getParameter("code");
@@ -15,7 +16,7 @@
         accessToken = fbConnection.getAccessToken(code);
         FBGraph fbGraph = new FBGraph(accessToken);
         String graph = fbGraph.getFBGraph();
-        Map fbProfileData = fbGraph.getGraphData(graph);
+        fbProfileData = fbGraph.getGraphData(graph);
         F_Koneksi Koneksi = new F_Koneksi();
         String query = "SELECT * FROM datauser WHERE userid = '"+fbProfileData.get("id")+"';";
         if (Koneksi.SelectCheck(query)){
