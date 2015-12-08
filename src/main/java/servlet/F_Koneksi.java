@@ -152,6 +152,7 @@ public class F_Koneksi {
             stmt.executeQuery(sql);
             return true;
         } catch (SQLException ex) {
+            ex.printStackTrace();
             return false;
         } finally {
             try{
