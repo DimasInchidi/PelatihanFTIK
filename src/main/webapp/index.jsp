@@ -2,6 +2,7 @@
 <%@ page import="servlet.FBConnection" %>
 <%@ page import="servlet.FBGraph" %>
 <%@ page import="java.util.Map" %>
+<%@ page import="servlet.F_Koneksi" %>
 <%
     String code;
     FBConnection fbConnection = new FBConnection();
@@ -14,6 +15,11 @@
         FBGraph fbGraph = new FBGraph(accessToken);
         String graph = fbGraph.getFBGraph();
         Map<String, String> fbProfileData = fbGraph.getGraphData(graph);
+        F_Koneksi Koneksi = new F_Koneksi();
+        String query = "SELECT * FROM datauser WHERE userid = '"+fbProfileData.get("id")+"';";
+        if (Koneksi.Select(query) !=null){
+            response.sendRedirect("/Thanks");
+        }else{
 %>
 <!DOCTYPE html>
 <html lang="en">
@@ -145,5 +151,6 @@
 
 </html>
 <%
+        }
         }
 %>
