@@ -14,7 +14,7 @@
         response.sendRedirect(url);
     } else{
         String diprint = "kodenya>>>"+code+"<<<<";
-        System.out.println();
+        System.out.println(diprint);
         accessToken = fbConnection.getAccessToken(code);
         FBGraph fbGraph = new FBGraph(accessToken);
         String graph = fbGraph.getFBGraph();
