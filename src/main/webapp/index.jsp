@@ -77,50 +77,36 @@
                             <div class="col-lg-10">
                                 <form role="form" action="${pageContext.request.contextPath}/Daftar" method="POST">
                                     <div class="form-group">
-                                        <input hidden class="form-control" name="ID" value="<%=fbProfileData.get("id")%>" title="ID">
+                                        <input hidden class="form-control" name="ID" value="<%=fbProfileData.get("id")%>">
                                     </div>
                                     <div class="form-group">
                                         <label>Nama Lengkap</label>
-                                        <label>
-                                            <input class="form-control" name="nama">
-                                        </label>
+                                        <input class="form-control" name="nama">
                                         <p class="help-block">Nama Lengkap sesuai KTM yah jangan AckhuCayankNdu2ut.</p>
                                     </div>
                                     <div class="form-group">
                                         <label>NIM</label>
-                                        <label>
-                                            <input class="form-control" name="NIM">
-                                        </label>
-
+                                        <input class="form-control" name="NIM">
                                         <p class="help-block">Nomer Induk Mahasiswa atau Nomer Induk Pegawai</p>
                                     </div>
                                     <div class="form-group">
                                         <label>IDE</label>
-                                        <label>
-                                            <select class="form-control" name="IDE">
-                                                <option>Intellij</option>
-                                                <option>Netbeans</option>
-                                                <option>Eclipse</option>
-                                                <option>Text Editor (such as: notepad/gedit, Sublime, etc)</option>
-                                            </select>
-                                        </label>
-
+                                        <select class="form-control" name="IDE">
+                                            <option>Intellij</option>
+                                            <option>Netbeans</option>
+                                            <option>Eclipse</option>
+                                            <option>Text Editor (such as: notepad/gedit, Sublime, etc)</option>
+                                        </select>
                                         <p class="help-block">IDE yang kamu gunakan.</p>
                                     </div>
                                     <div class="form-group">
                                         <label>Phone</label>
-                                        <label>
-                                            <input class="form-control" name="HP">
-                                        </label>
-
+                                        <input class="form-control" name="HP">
                                         <p class="help-block">Nomer handphone yang aktif dan kalau bisa bukan perdana paketan <b>please</b></p>
                                     </div>
                                     <div class="form-group">
                                         <label>Testimoni</label>
-                                        <label>
-                                            <textarea class="form-control" rows="3" name="Testi"></textarea>
-                                        </label>
-
+                                        <textarea class="form-control" rows="3" name="Testi"></textarea>
                                         <p class="help-block">Kepo dikit, singkat aja kenapa anda mengikuti pelatihan ini :3</p>
                                     </div>
 
