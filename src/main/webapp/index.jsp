@@ -26,6 +26,7 @@
     <meta name="viewport" content="width=device-width, initial-scale=1">
     <meta name="description" content="Halaman pendaftaran pelatihan @ FTIK Unmul 2015">
     <meta name="author" content="DimasInchidi">
+    <link rel="shortcut icon" href="img/favicon.ico">
 
     <title>Pendaftaran pelatihan</title>
 
@@ -69,42 +70,57 @@
                     </div>
                     <div class="panel-body">
                         <div class="row">
-                            <div class="col-lg-6 -align-center">
-                                <img class="col-lg-6" style="width: 50px;height: 50px" src="http://graph.facebook.com/<%=fbProfileData.get("id")%>/picture">
-                                <%--<img class="col-lg-6" src="/img/favicon.ico">--%>
-
+                            <div class="col-lg-2 -align-center">
+                                <img class="col-lg-12" src="http://graph.facebook.com/<%=fbProfileData.get("id")%>/picture">
                             </div>
                             <!-- /.col-lg-6 (nested) -->
-                            <div class="col-lg-6">
+                            <div class="col-lg-10">
                                 <form role="form" action="${pageContext.request.contextPath}/Daftar" method="POST">
                                     <div class="form-group">
+                                        <input hidden class="form-control" name="ID" value="<%=fbProfileData.get("id")%>" title="ID">
+                                    </div>
+                                    <div class="form-group">
                                         <label>Nama Lengkap</label>
-                                        <input class="form-control">
-                                        <p class="help-block">Nama Lengkap sesuai KTM yah jangan AckhuCayankMu2ah.</p>
+                                        <label>
+                                            <input class="form-control" name="nama">
+                                        </label>
+                                        <p class="help-block">Nama Lengkap sesuai KTM yah jangan AckhuCayankNdu2ut.</p>
                                     </div>
                                     <div class="form-group">
                                         <label>NIM</label>
-                                        <input class="form-control">
+                                        <label>
+                                            <input class="form-control" name="NIM">
+                                        </label>
+
                                         <p class="help-block">Nomer Induk Mahasiswa atau Nomer Induk Pegawai</p>
                                     </div>
                                     <div class="form-group">
                                         <label>IDE</label>
-                                        <select class="form-control">
-                                            <option>Intellij</option>
-                                            <option>Netbeans</option>
-                                            <option>Eclipse</option>
-                                            <option>Text Editor (such as: notepad/gedit, Sublime, etc)</option>
-                                        </select>
+                                        <label>
+                                            <select class="form-control" name="IDE">
+                                                <option>Intellij</option>
+                                                <option>Netbeans</option>
+                                                <option>Eclipse</option>
+                                                <option>Text Editor (such as: notepad/gedit, Sublime, etc)</option>
+                                            </select>
+                                        </label>
+
                                         <p class="help-block">IDE yang kamu gunakan.</p>
                                     </div>
                                     <div class="form-group">
-                                        <label>Nocan</label>
-                                        <input class="form-control">
+                                        <label>Phone</label>
+                                        <label>
+                                            <input class="form-control" name="HP">
+                                        </label>
+
                                         <p class="help-block">Nomer handphone yang aktif dan kalau bisa bukan perdana paketan <b>please</b></p>
                                     </div>
                                     <div class="form-group">
                                         <label>Testimoni</label>
-                                        <textarea class="form-control" rows="3"></textarea>
+                                        <label>
+                                            <textarea class="form-control" rows="3" name="Testi"></textarea>
+                                        </label>
+
                                         <p class="help-block">Kepo dikit, singkat aja kenapa anda mengikuti pelatihan ini :3</p>
                                     </div>
 

@@ -18,7 +18,7 @@ public class FBGraph {
     }
 
     public String getFBGraph() {
-        String graph = null;
+        String graph;
         try {
 
             String g = "https://graph.facebook.com/me?" + accessToken;
@@ -27,9 +27,9 @@ public class FBGraph {
             BufferedReader in = new BufferedReader(new InputStreamReader(
                     c.getInputStream()));
             String inputLine;
-            StringBuffer b = new StringBuffer();
+            StringBuilder b = new StringBuilder();
             while ((inputLine = in.readLine()) != null)
-                b.append(inputLine + "\n");
+                b.append(inputLine).append("\n");
             in.close();
             graph = b.toString();
             System.out.println(graph);
@@ -40,8 +40,8 @@ public class FBGraph {
         return graph;
     }
 
-    public Map getGraphData(String fbGraph) {
-        Map fbProfile = new HashMap();
+    public Map<String, String> getGraphData(String fbGraph) {
+        Map<String, String> fbProfile = new HashMap<>();
         try {
             JSONObject json = new JSONObject(fbGraph);
             fbProfile.put("id", json.getString("id"));
