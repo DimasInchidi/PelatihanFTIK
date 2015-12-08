@@ -166,7 +166,7 @@
                 <h4 class="modal-title" id="myModalLabelinsert">Pendaftaran Gagal</h4>
             </div>
             <div class="modal-body">
-                Terjadi kesalahan dalam koneksi ke database. Silahkan koneksi anda atau hubungi:
+                Terjadi kesalahan dalam pendaftaran. Mungkin data anda sudah ada. jika anda yakin belum, silahkan periksa koneksi anda atau hubungi:
                 Dimas Ari 0812 7777 9663
                 Godefridus Jeno 0852 4619 2158
             </div>
