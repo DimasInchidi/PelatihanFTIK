@@ -7,23 +7,20 @@
     System.out.println("pageHead");
     String code= "",url = "", accessToken = "", graph = "";
     Map fbProfileData = null;
-    request.getSession(false);
-    FBConnection fbConnection = new FBConnection();
+
     code = request.getParameter("code");
-    url = fbConnection.getFBAuthUrl();
-    if (code == null || code.trim().replaceAll(" ", "").equals("")) {
-        String diprint = "kodenya Kosong";
-        System.out.println(diprint);
+    if (code == null || code.equals("")) {
+        FBConnection fbConnection = new FBConnection();
+        url = fbConnection.getFBAuthUrl();
         response.sendRedirect(url);
     } else{
-        String diprint = "kodenya>>>"+code+"<<<<";
-        System.out.println(diprint);
+        FBConnection fbConnection = new FBConnection();
         accessToken = fbConnection.getAccessToken(code);
-        diprint = "accessTokenya>>>"+accessToken+"<<<<";
-        System.out.println(diprint);
+
         FBGraph fbGraph = new FBGraph(accessToken);
         graph = fbGraph.getFBGraph();
         fbProfileData = fbGraph.getGraphData(graph);
+
         F_Koneksi Koneksi = new F_Koneksi();
         String query = "SELECT * FROM datauser WHERE userid = '"+fbProfileData.get("id")+"';";
         if (Koneksi.SelectCheck(query)){

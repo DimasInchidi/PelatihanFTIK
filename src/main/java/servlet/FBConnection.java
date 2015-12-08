@@ -14,7 +14,6 @@ public class FBConnection {
     public static final String FB_APP_SECRET = System.getenv("FB_APP_SECRET");
     public static final String REDIRECT_URI = "https://pelatihan-ftik.herokuapp.com/";
 
-    static String accessToken = "";
 
     public String getFBAuthUrl() {
         String fbLoginUrl = "";
@@ -43,6 +42,7 @@ public class FBConnection {
     }
 
     public String getAccessToken(String code) {
+        String accessToken = "";
         if ("".equals(accessToken)) {
             URL fbGraphURL;
             try {
