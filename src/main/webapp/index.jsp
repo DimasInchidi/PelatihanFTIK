@@ -4,7 +4,7 @@
 <%@ page import="java.util.Map" %>
 <%@ page import="servlet.F_Koneksi" %>
 <%
-    String code;
+    String code, aksi;
     FBConnection fbConnection = new FBConnection();
     code = request.getParameter("code");
     String url = fbConnection.getFBAuthUrl();
@@ -20,6 +20,7 @@
         if (Koneksi.SelectCheck(query)){
             response.sendRedirect("/Thanks");
         }else{
+            try {aksi = request.getParameter("aksi");}catch (Exception e){aksi="none"}
 %>
 <!DOCTYPE html>
 <html lang="en">
@@ -128,6 +129,9 @@
                                             </div>
                                         </label>
                                     </div>
+                                    <div class="form-group">
+                                        <input class="hidden" name="URL" value="<%=request.getRequestURL()%>">
+                                    </div>
                                     <br>
                                     <button type="submit" class="btn btn-default">Selesai</button>
                                     <button type="reset" class="btn btn-default">Reset</button>
@@ -147,7 +151,7 @@
 
     </div>
 </div>
-<div style="display: none;" class="modal fade" id="fail" tabindex="-1" role="dialog" aria-labelledby="myModalLabel" aria-hidden="true">
+<div style="display: none;" <% if(aksi.equalsIgnoreCase("none"))out.print("class=\"modal fade\"");else out.print("class=\"modal fade in\"");%> class="modal fade" id="fail" tabindex="-1" role="dialog" aria-labelledby="myModalLabel" aria-hidden="true">
     <div class="modal-dialog">
         <div class="modal-content">
             <div class="modal-header">

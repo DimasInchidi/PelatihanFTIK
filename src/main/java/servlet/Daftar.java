@@ -6,6 +6,7 @@ import javax.servlet.annotation.WebServlet;
 import javax.servlet.http.HttpServlet;
 import javax.servlet.http.HttpServletRequest;
 import javax.servlet.http.HttpServletResponse;
+import javax.servlet.jsp.PageContext;
 import java.io.IOException;
 import java.util.Map;
 
@@ -21,7 +22,7 @@ public class Daftar extends HttpServlet {
     }
 
     private void aksi(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException{
-        String URL = "#fail";
+        String URL = request.getParameter("")+"?aksi=fail";
         F_Koneksi koneksi = new F_Koneksi();
         try {
             String query = "INSERT INTO public.datauser (userid, nama, nim, hp, ide, testi) " +
