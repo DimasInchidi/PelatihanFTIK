@@ -27,9 +27,9 @@ public class Daftar extends HttpServlet {
         try {
             String query = "INSERT INTO public.datauser (userid, nama, nim, hp, ide, testi) " +
                     "VALUES ('" + dataDaftar.get("ID").toString() +
-                    "', '" + dataDaftar.get("Nama").toString() + "', " +
-                    Integer.parseInt(dataDaftar.get("NIM").toString()) +
-                    ", '" + dataDaftar.get("HP").toString() +
+                    "', '" + dataDaftar.get("Nama").toString() + "', '" +
+                    dataDaftar.get("NIM").toString() +
+                    "', '" + dataDaftar.get("HP").toString() +
                     "', '" + dataDaftar.get("IDE").toString() +
                     "', '" + dataDaftar.get("Testi").toString() + "');";
             System.out.println(query);
