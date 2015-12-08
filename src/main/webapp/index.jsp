@@ -17,7 +17,7 @@
         Map<String, String> fbProfileData = fbGraph.getGraphData(graph);
         F_Koneksi Koneksi = new F_Koneksi();
         String query = "SELECT * FROM datauser WHERE userid = '"+fbProfileData.get("id")+"';";
-        if (Koneksi.Select(query) !=null){
+        if (Koneksi.SelectCheck(query)){
             response.sendRedirect("/Thanks");
         }else{
 %>

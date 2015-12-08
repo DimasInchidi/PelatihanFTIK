@@ -117,6 +117,34 @@ public class F_Koneksi {
         return hasil;
     }
 
+    public boolean SelectCheck(String query) {
+        boolean ok;
+        try {
+            con = Koneksi();
+            query = query.replaceAll("`", "\"");
+            stmt = con.createStatement();
+            System.out.println(query);
+            ResultSet rs = stmt.executeQuery(query);
+            if (rs.next()) ok = true;
+            else ok = false;
+        } catch (SQLException ex) {
+            ok = false;
+        } finally {
+            try{
+                if(stmt!=null)
+                    stmt.close();
+            }catch(SQLException ignored){
+            }
+            try{
+                if(con!=null)
+                    con.close();
+            }catch(SQLException se){
+                se.printStackTrace();
+            }//end finally try
+        }
+        return ok;
+    }
+
     public boolean Update(String Query) {
         try {
             con = Koneksi();
