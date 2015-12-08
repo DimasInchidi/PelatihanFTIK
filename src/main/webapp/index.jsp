@@ -12,6 +12,8 @@
     code = request.getParameter("code");
     url = fbConnection.getFBAuthUrl();
     if (code == null || code.trim().replaceAll(" ", "").equals("")) {
+        String diprint = "kodenya Kosong";
+        System.out.println(diprint);
         response.sendRedirect(url);
     } else{
         String diprint = "kodenya>>>"+code+"<<<<";
