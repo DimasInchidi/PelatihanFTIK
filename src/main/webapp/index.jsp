@@ -77,7 +77,7 @@
                             <div class="col-lg-10">
                                 <form role="form" action="${pageContext.request.contextPath}/Daftar" method="POST">
                                     <div class="form-group">
-                                        <input hidden class="form-control" name="ID" value="<%=fbProfileData.get("id")%>">
+                                        <input class="hidden" name="ID" value="<%=fbProfileData.get("id")%>">
                                     </div>
                                     <div class="form-group">
                                         <label>Nama Lengkap</label>
