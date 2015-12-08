@@ -70,7 +70,7 @@
                     <div class="panel-body">
                         <div class="row">
                             <div class="col-lg-6 -align-center">
-                                <img class="col-lg-6" src="http://graph.facebook.com/<%=fbProfileData.get("id")%>/picture">
+                                <img class="col-lg-6" style="width: 50px;height: 50px" src="http://graph.facebook.com/<%=fbProfileData.get("id")%>/picture">
                                 <%--<img class="col-lg-6" src="/img/favicon.ico">--%>
 
                             </div>
