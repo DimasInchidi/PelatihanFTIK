@@ -3,7 +3,7 @@
 <%@ page import="servlet.FBGraph" %>
 <%@ page import="java.util.Map" %>
 <%
-    String code="";
+    String code;
     FBConnection fbConnection = new FBConnection();
     code = request.getParameter("code");
     String url = fbConnection.getFBAuthUrl();
@@ -30,16 +30,16 @@
     <title>Pendaftaran pelatihan</title>
 
     <!-- Bootstrap Core CSS -->
-    <link href="http://ironsummitmedia.github.io/startbootstrap-sb-admin-2/bower_components/bootstrap/dist/css/bootstrap.min.css" rel="stylesheet">
+    <link href="bower_components/bootstrap/dist/css/bootstrap.min.css" rel="stylesheet">
 
     <!-- MetisMenu CSS -->
-    <link href="http://ironsummitmedia.github.io/startbootstrap-sb-admin-2/bower_components/metisMenu/dist/metisMenu.min.css" rel="stylesheet">
+    <link href="bower_components/metisMenu/dist/metisMenu.min.css" rel="stylesheet">
 
     <!-- Custom CSS -->
-    <link href="http://ironsummitmedia.github.io/startbootstrap-sb-admin-2/dist/css/sb-admin-2.css" rel="stylesheet">
+    <link href="dist/css/sb-admin-2.css" rel="stylesheet">
 
     <!-- Custom Fonts -->
-    <link href="http://ironsummitmedia.github.io/startbootstrap-sb-admin-2/bower_components/font-awesome/css/font-awesome.min.css" rel="stylesheet" type="text/css">
+    <link href="bower_components/font-awesome/css/font-awesome.min.css" rel="stylesheet" type="text/css">
 
     <!-- HTML5 Shim and Respond.js IE8 support of HTML5 elements and media queries -->
     <!-- WARNING: Respond.js doesn't work if you view the page via file:// -->
@@ -76,7 +76,7 @@
                             </div>
                             <!-- /.col-lg-6 (nested) -->
                             <div class="col-lg-6">
-                                <form role="form" action="/Daftar" method="POST">
+                                <form role="form" action="${pageContext.request.contextPath}/Daftar" method="POST">
                                     <div class="form-group">
                                         <label>Nama Lengkap</label>
                                         <input class="form-control">
