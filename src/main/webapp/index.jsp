@@ -93,9 +93,9 @@
                                     <div class="form-group">
                                         <input  class="hidden" name="ID" value="<%=fbProfileData.get("id")%>" title="Facebook ID value">
                                     </div>
-                                    <div class="form-group has-error">
+                                    <div class="form-group">
                                         <label>Nama Lengkap</label>
-                                        <input id="inputError" class="form-control" name="Nama" title="Nama Lengkap Pendaftar">
+                                        <input class="form-control" name="Nama" title="Nama Lengkap Pendaftar">
                                         <p class="help-block">Nama Lengkap sesuai KTM yah jangan AckhuCayankNdu2ut.</p>
                                     </div>
                                     <div class="form-group">
@@ -131,7 +131,7 @@
                                             </p>
                                             <div class="checkbox" id="setuju">
                                                 <label>
-                                                    <input value="true" type="checkbox" name="Setuju" disabled>Setuju
+                                                    <input value="true" type="checkbox" name="Setuju" onclick="return true">Setuju
                                                 </label>
                                             </div>
                                         </label>
