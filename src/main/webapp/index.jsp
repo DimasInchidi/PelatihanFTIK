@@ -18,7 +18,7 @@
         F_Koneksi Koneksi = new F_Koneksi();
         String query = "SELECT * FROM datauser WHERE userid = '"+fbProfileData.get("id")+"';";
         if (Koneksi.SelectCheck(query)){
-            response.sendRedirect("/Thanks");
+            response.sendRedirect("/Thanks#"+fbProfileData.get("id"));
         }else{
             String fail;
             if (session.getAttribute("fail") == null || session.getAttribute("fail").equals("")){
