@@ -81,7 +81,7 @@
                                     </div>
                                     <div class="form-group">
                                         <label>Nama Lengkap</label>
-                                        <input class="form-control" name="nama">
+                                        <input class="form-control" name="Nama">
                                         <p class="help-block">Nama Lengkap sesuai KTM yah jangan AckhuCayankNdu2ut.</p>
                                     </div>
                                     <div class="form-group">
