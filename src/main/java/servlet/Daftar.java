@@ -28,6 +28,9 @@ public class Daftar extends HttpServlet {
         String IDE = request.getParameter("IDE");
         String Testi = request.getParameter("Testi");
         if (ID.length()<5 || Nama.length() <5 || HP.length()<8 ){
+            System.out.println(ID);
+            System.out.println(Nama);
+            System.out.println(HP);
             request.getSession().setAttribute("fail","param");
         }
         switch (IDE){
