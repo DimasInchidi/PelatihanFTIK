@@ -4,7 +4,7 @@
 <%@ page import="java.util.Map" %>
 <%@ page import="servlet.F_Koneksi" %>
 <%
-    String code= "", aksi= "",url = "";
+    String code= "", aksi= "",url = "", accessToken = "";
     request.getSession(false);
     FBConnection fbConnection = new FBConnection();
     code = request.getParameter("code");
@@ -12,7 +12,7 @@
     if (code == null || code.equals("")) {
         response.sendRedirect(url);
     } else{
-        String accessToken = fbConnection.getAccessToken(code);
+        accessToken = fbConnection.getAccessToken(code);
         FBGraph fbGraph = new FBGraph(accessToken);
         String graph = fbGraph.getFBGraph();
         Map fbProfileData = fbGraph.getGraphData(graph);
