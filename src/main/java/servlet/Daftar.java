@@ -1,17 +1,11 @@
 package servlet;
 
-import org.apache.catalina.Session;
-
-import javax.management.Query;
 import javax.servlet.ServletException;
 import javax.servlet.annotation.WebServlet;
 import javax.servlet.http.HttpServlet;
 import javax.servlet.http.HttpServletRequest;
 import javax.servlet.http.HttpServletResponse;
-import javax.servlet.http.HttpSession;
-import javax.servlet.jsp.PageContext;
 import java.io.IOException;
-import java.util.Map;
 
 @WebServlet(name = "Daftar",
 urlPatterns = "/Daftar")
@@ -27,16 +21,39 @@ public class Daftar extends HttpServlet {
 
     private void aksi(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException{
         String URL = "/";
+        String ID = request.getParameter("ID");
+        String Nama = request.getParameter("Nama");
+        String NIM = request.getParameter("NIM");
+        String HP = request.getParameter("HP");
+        String IDE = request.getParameter("IDE");
+        String Testi = request.getParameter("Testi");
+        switch (IDE){
+            case "Intellij":
+
+                break;
+            case "Netbeans":
+
+                break;
+            case "Eclipse":
+
+                break;
+            case "Text Editor (such as: notepad/gedit, Sublime, etc)":
+                IDE = "Text Editor";
+                break;
+            default:
+                IDE = "Intellij";
+                break;
+        }
         F_Koneksi koneksi = new F_Koneksi();
         try {
+            int nim = Integer.parseInt(NIM);
             String query = "INSERT INTO public.datauser (userid, nama, nim, hp, ide, testi) " +
-                    "VALUES ('" + request.getParameter("ID") +
-                    "', '" + request.getParameter("Nama") + "', '" +
-                    request.getParameter("NIM") +
-                    "', '" + request.getParameter("HP") +
-                    "', '" + request.getParameter("IDE") +
-                    "', '" + request.getParameter("Testi") + "');";
-            System.out.println(query);
+                    "VALUES ('" + ID +
+                    "', '" + Nama + "', '" +
+                    nim +
+                    "', '" + HP +
+                    "', '" + IDE +
+                    "', '" + Testi + "');";
             if (koneksi.Insert(query)){
                 URL = "/Thanks";
             } else {

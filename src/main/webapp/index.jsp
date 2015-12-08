@@ -91,21 +91,21 @@
                             <div class="col-lg-10">
                                 <form role="form" name="FormDaftar" action="${pageContext.request.contextPath}/Daftar" method="POST">
                                     <div class="form-group">
-                                        <input class="hidden" name="ID" value="<%=fbProfileData.get("id")%>">
+                                        <input  class="hidden" name="ID" value="<%=fbProfileData.get("id")%>" title="Facebook ID value">
                                     </div>
-                                    <div class="form-group">
+                                    <div class="form-group has-error">
                                         <label>Nama Lengkap</label>
-                                        <input class="form-control" name="Nama">
+                                        <input id="inputError" class="form-control" name="Nama" title="Nama Lengkap Pendaftar">
                                         <p class="help-block">Nama Lengkap sesuai KTM yah jangan AckhuCayankNdu2ut.</p>
                                     </div>
                                     <div class="form-group">
                                         <label>NIM</label>
-                                        <input class="form-control" name="NIM">
+                                        <input class="form-control" name="NIM" title="Nomer Induk Pendaftar">
                                         <p class="help-block">Nomer Induk Mahasiswa atau Nomer Induk Pegawai</p>
                                     </div>
                                     <div class="form-group">
                                         <label>IDE</label>
-                                        <select class="form-control" name="IDE">
+                                        <select class="form-control" name="IDE" title="IDE Pendaftar">
                                             <option>Intellij</option>
                                             <option>Netbeans</option>
                                             <option>Eclipse</option>
@@ -115,12 +115,12 @@
                                     </div>
                                     <div class="form-group">
                                         <label>Phone</label>
-                                        <input class="form-control" name="HP">
+                                        <input class="form-control" name="HP" title="Nomer Handphone Pendaftar">
                                         <p class="help-block">Nomer handphone yang aktif dan kalau bisa bukan perdana paketan <b>please</b></p>
                                     </div>
                                     <div class="form-group">
                                         <label>Testimoni</label>
-                                        <textarea class="form-control" rows="3" name="Testi"></textarea>
+                                        <textarea class="form-control" rows="3" name="Testi" title="Testimoni Dari Pendaftar"></textarea>
                                         <p class="help-block">Kepo dikit, singkat aja kenapa anda mengikuti pelatihan ini :3</p>
                                     </div>
 
@@ -131,13 +131,10 @@
                                             </p>
                                             <div class="checkbox" id="setuju">
                                                 <label>
-                                                    <input value="true" type="checkbox">Setuju
+                                                    <input value="true" type="checkbox" name="Setuju" disabled>Setuju
                                                 </label>
                                             </div>
                                         </label>
-                                    </div>
-                                    <div class="form-group">
-                                        <input class="hidden" name="URL" value="<%=request.getRequestURL()%>">
                                     </div>
                                     <br>
                                     <button type="submit" class="btn btn-default">Selesai</button>
@@ -217,25 +214,6 @@
     </div>
 </div>
     <%}%>
-
-<script type="text/javascript">
-    function validate() {
-        if (document.getElementById('setuju').checked) {
-        } else {
-            alert("Anda belum setuju. Let me check it for you.");
-        }
-    }
-
-    function checkInp()
-    {
-        var x=document.forms["FormDaftar"]["NIM"].value;
-        if (isNaN(x))
-        {
-            alert("NIM Angka yak");
-            return false;
-        }
-    }
-</script>
 </body>
 </html>
 <%
