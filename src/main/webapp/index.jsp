@@ -20,6 +20,12 @@
         if (Koneksi.SelectCheck(query)){
             response.sendRedirect("/Thanks");
         }else{
+            String fail;
+            if (session.getAttribute("fail") == null || session.getAttribute("fail").equals("")){
+                fail = "none";
+            } else{
+                fail = session.getAttribute("fail").toString();
+            }
 %>
 <!DOCTYPE html>
 <html lang="en">
@@ -151,7 +157,7 @@
     </div>
 </div>
 <%
-    if (session.getAttribute("fail").equals("insert")){%>
+    if (fail.equals("insert")){%>
 <div style="display: none;" class="modal fade in" id="fail" tabindex="-1" role="dialog" aria-labelledby="myModalLabelinsert" aria-hidden="true">
     <div class="modal-dialog">
         <div class="modal-content">
@@ -172,7 +178,7 @@
     </div>
     <!-- /.modal-dialog -->
 </div>
-    <%} else if(session.getAttribute("fail").equals("param")){%>
+    <%} else if(fail.equals("param")){%>
 <div style="display: none;" class="modal fade in" id="fail" tabindex="-1" role="dialog" aria-labelledby="myModalLabelparam" aria-hidden="true">
     <div class="modal-dialog">
         <div class="modal-content">
