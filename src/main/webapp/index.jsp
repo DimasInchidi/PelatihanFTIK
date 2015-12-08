@@ -4,6 +4,7 @@
 <%@ page import="java.util.Map" %>
 <%@ page import="servlet.F_Koneksi" %>
 <%
+    System.out.println("pageHead");
     String code= "",url = "", accessToken = "", graph = "";
     Map fbProfileData = null;
     request.getSession(false);
