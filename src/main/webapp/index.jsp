@@ -81,7 +81,7 @@
                             </div>
                             <!-- /.col-lg-6 (nested) -->
                             <div class="col-lg-10">
-                                <form role="form" action="${pageContext.request.contextPath}/Daftar" method="POST">
+                                <form role="form" name="FormDaftar" action="${pageContext.request.contextPath}/Daftar" method="POST">
                                     <div class="form-group">
                                         <input class="hidden" name="ID" value="<%=fbProfileData.get("id")%>">
                                     </div>
@@ -117,16 +117,16 @@
                                     </div>
 
                                     <div class="form-group">
-                                            <label>
-                                                <p class="help-block">Dengan ini setelah anda menekan tombol Selesai, anda menyatakan bahwa telah mengisi data di atas secara benar.
-                                                    Anda juga menyatakan bahwa anda mengikuti pelatihan ini. Biar tambah gimana gitu anda juga berusaha agar tidak terlambat saat pelatihan.
-                                                </p>
-                                                <div class="checkbox">
-                                                    <label>
-                                                        <input value="true" type="checkbox">Setuju
-                                                    </label>
-                                                </div>
-                                            </label>
+                                        <label>
+                                            <p class="help-block">Dengan ini setelah anda menekan tombol Selesai, anda menyatakan bahwa telah mengisi data di atas secara benar.
+                                                Anda juga menyatakan bahwa anda mengikuti pelatihan ini. Biar tambah gimana gitu anda juga berusaha agar tidak terlambat saat pelatihan.
+                                            </p>
+                                            <div class="checkbox">
+                                                <label>
+                                                    <input value="true" type="checkbox">Setuju
+                                                </label>
+                                            </div>
+                                        </label>
                                     </div>
                                     <br>
                                     <button type="submit" class="btn btn-default">Selesai</button>
@@ -147,10 +147,20 @@
 
     </div>
 </div>
+<script type="text/javascript">
+    function checkInp()
+    {
+        var x=document.forms["FormDaftar"]["NIM"].value;
+        if (isNaN(x))
+        {
+            alert("NIM Angka yak");
+            return false;
+        }
+    }
+</script>
 </body>
-
 </html>
 <%
         }
-        }
+    }
 %>
