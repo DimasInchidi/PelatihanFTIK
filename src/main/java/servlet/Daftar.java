@@ -26,11 +26,11 @@ public class Daftar extends HttpServlet {
         F_Koneksi koneksi = new F_Koneksi();
         try {
             String query = "INSERT INTO public.datauser (userid, nama, nim, hp, ide, testi) " +
-                    "VALUES (" + Integer.parseInt(dataDaftar.get("ID").toString()) +
-                    ", '" + dataDaftar.get("Nama").toString() + "', " +
+                    "VALUES ('" + dataDaftar.get("ID").toString() +
+                    "', '" + dataDaftar.get("Nama").toString() + "', " +
                     Integer.parseInt(dataDaftar.get("NIM").toString()) +
-                    ", " + Integer.parseInt(dataDaftar.get("HP").toString()) +
-                    ", '" + dataDaftar.get("IDE").toString() +
+                    ", '" + dataDaftar.get("HP").toString() +
+                    "', '" + dataDaftar.get("IDE").toString() +
                     "', '" + dataDaftar.get("Testi").toString() + "');";
             System.out.println(query);
             if (koneksi.Insert(query)){
