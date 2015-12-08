@@ -160,46 +160,51 @@
 </div>
 <%
     if (fail.equals("insert")){%>
-<div class="modal fade in" id="fail" tabindex="-1" role="dialog" aria-labelledby="myModalLabelinsert" aria-hidden="false" style="display: block;">
+<div id="myModal" class="modal fade" role="dialog">
     <div class="modal-dialog">
+        <!-- Modal content-->
         <div class="modal-content">
             <div class="modal-header">
-                <button type="button" class="close" data-dismiss="modal" aria-hidden="true">×</button>
-                <h4 class="modal-title" id="myModalLabelinsert">Pendaftaran Gagal</h4>
+                <button type="button" class="close" data-dismiss="modal">&times;</button>
+                <h4 class="modal-title">Pendaftaran Gagal</h4>
             </div>
             <div class="modal-body">
-                Terjadi kesalahan dalam pendaftaran. Mungkin data anda sudah ada. jika anda yakin belum, silahkan periksa koneksi anda atau hubungi:
-                Dimas Ari 0812 7777 9663
-                Godefridus Jeno 0852 4619 2158
+                <p>
+                    Terjadi kesalahan dalam pendaftaran. Sepertinya data anda sudah ada. jika anda yakin belum, silahkan periksa koneksi anda atau hubungi:
+                    <br>
+                    Dimas Ari 0812 7777 9663
+                    <br>
+                    Godefridus Jeno 0852 4619 2158</p>
             </div>
             <div class="modal-footer">
                 <button type="button" class="btn btn-default" data-dismiss="modal">Close</button>
             </div>
         </div>
-        <!-- /.modal-content -->
     </div>
-    <!-- /.modal-dialog -->
 </div>
     <%} else if(fail.equals("param")){%>
-<div  class="modal fade in" id="fail" tabindex="-1" role="dialog" aria-labelledby="myModalLabelparam" aria-hidden="false" style="display: block;">
+<!-- Modal -->
+<div id="myModal" class="modal fade" role="dialog">
     <div class="modal-dialog">
+        <!-- Modal content-->
         <div class="modal-content">
             <div class="modal-header">
-                <button type="button" class="close" data-dismiss="modal" aria-hidden="true">×</button>
-                <h4 class="modal-title" id="myModalLabelparam">Pendaftaran Gagal</h4>
+                <button type="button" class="close" data-dismiss="modal">&times;</button>
+                <h4 class="modal-title">Pendaftaran Gagal</h4>
             </div>
             <div class="modal-body">
-                Terjadi kesalahan dalam pendaftaran anda. Silahkan periksa data anda kembali atau hubungi:<br>
-                Dimas Ari 0812 7777 9663<br>
-                Godefridus Jeno 0852 4619 2158
+                <p>
+                    Terjadi kesalahan dalam pendaftaran anda. Silahkan periksa data anda kembali atau hubungi:
+                    <br>
+                    Dimas Ari 0812 7777 9663
+                    <br>
+                    Godefridus Jeno 0852 4619 2158</p>
             </div>
             <div class="modal-footer">
                 <button type="button" class="btn btn-default" data-dismiss="modal">Close</button>
             </div>
         </div>
-        <!-- /.modal-content -->
     </div>
-    <!-- /.modal-dialog -->
 </div>
     <%}%>
 
