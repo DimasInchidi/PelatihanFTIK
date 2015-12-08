@@ -33,7 +33,7 @@ public class Daftar extends HttpServlet {
                     "', '" + request.getParameter("Testi") + "');";
             System.out.println(query);
             if (koneksi.Insert(query)){
-                URL = "/done";
+                URL = "/Thanks";
             }
         } catch (Exception e){
             e.printStackTrace();

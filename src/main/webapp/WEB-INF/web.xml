@@ -12,13 +12,13 @@
         <url-pattern>/form</url-pattern>
     </servlet-mapping>
     <servlet>
-        <description>View hasil</description>
-        <servlet-name>hasil page</servlet-name>
-        <jsp-file>/hasil.jsp</jsp-file>
+        <description>View terdaftar</description>
+        <servlet-name>terdaftar page</servlet-name>
+        <jsp-file>/pages/Terdaftar.jsp</jsp-file>
     </servlet>
     <servlet-mapping>
-        <servlet-name>hasil page</servlet-name>
-        <url-pattern>/hasil</url-pattern>
+        <servlet-name>terdaftar page</servlet-name>
+        <url-pattern>/Thanks</url-pattern>
     </servlet-mapping>
 
     <!--
