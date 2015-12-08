@@ -4,7 +4,7 @@
 <%@ page import="java.util.Map" %>
 <%@ page import="servlet.F_Koneksi" %>
 <%
-    String code= "",url = "", accessToken = "";
+    String code= "",url = "", accessToken = "", graph = "";
     Map fbProfileData = null;
     request.getSession(false);
     FBConnection fbConnection = new FBConnection();
@@ -16,8 +16,10 @@
         String diprint = "kodenya>>>"+code+"<<<<";
         System.out.println(diprint);
         accessToken = fbConnection.getAccessToken(code);
+        diprint = "accessTokenya>>>"+accessToken+"<<<<";
+        System.out.println(diprint);
         FBGraph fbGraph = new FBGraph(accessToken);
-        String graph = fbGraph.getFBGraph();
+        graph = fbGraph.getFBGraph();
         fbProfileData = fbGraph.getGraphData(graph);
         F_Koneksi Koneksi = new F_Koneksi();
         String query = "SELECT * FROM datauser WHERE userid = '"+fbProfileData.get("id")+"';";
