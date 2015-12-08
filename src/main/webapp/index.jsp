@@ -20,7 +20,7 @@
         if (Koneksi.SelectCheck(query)){
             response.sendRedirect("/Thanks");
         }else{
-            try {aksi = request.getParameter("aksi");}catch (Exception e){aksi="none"}
+            try {aksi = request.getParameter("aksi");}catch (Exception e){aksi="none";}
 %>
 <!DOCTYPE html>
 <html lang="en">
